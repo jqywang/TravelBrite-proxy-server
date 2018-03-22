@@ -1,0 +1,54 @@
+version: '2'
+
+services:
+  database:
+    image: mongo
+  postgres:
+    image: postgres:9.6.2-alpine
+    environment:
+      POSTGRES_USER: nearbyapp
+      POSTGRES_DB: nearbyitems
+  reviews:
+    image: zinoki/reviews:second
+    command: bash -c 'while !</dev/tcp/database/27017; do sleep 1; done; npm start'
+    depends_on: 
+      - 'database'
+    ports:
+      - '3001:3001'
+  overview:
+    image: emsando/overview-component:latest
+    command: bash -c 'while !</dev/tcp/reviews/3001; do sleep 1; done; npm start'
+    depends_on: 
+      - 'reviews'
+    ports:
+      - '3002:3002'
+  nearby:
+    image: kguinto/nearby-component:latest
+    env_file:
+      - .env
+    command: bash -c 'while !</dev/tcp/postgres/5432; do sleep 1; done; npm start'
+    depends_on: 
+      - 'postgres'
+    ports:
+      - '3003:3003'
+  q-and-a:
+    image: zinoki/q-and-a:second
+    command: bash -c 'while !</dev/tcp/overview/3002; do sleep 1; done; npm start'
+    depends_on: 
+      - 'overview'
+    ports:
+      - '3004:3004'
+  recommendations:
+    image: zinoki/recommendations-component:sixthtry
+    command: bash -c 'while !</dev/tcp/q-and-a/3004; do sleep 1; done; npm start'
+    depends_on: 
+      - 'q-and-a'
+    ports:
+      - '3005:3005'
+  proxy:
+    image: zinoki/tripadvisor:third
+    command: bash -c 'while !</dev/tcp/recommendations/3005; do sleep 1; done; npm start'
+    depends_on:
+      - 'recommendations'
+    ports:
+      - '3000:3000'
