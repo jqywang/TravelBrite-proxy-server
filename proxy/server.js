@@ -1,3 +1,4 @@
+require('newrelic');
 const express = require('express')
 // const morgan = require('morgan');
 const cors = require('cors');
@@ -12,18 +13,18 @@ const port = process.env.PORT || 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/:listing_id', express.static(path.join(__dirname, 'public')));
 
-// //bryan
-// app.use('/reviews', (req, res) => {
-//   axios.get(`http://reviews:3001${req.originalUrl}`)
-//     .then(res => res.data)
-//     .then((data) => {
-//       res.send(data);
-//     })
-//     .catch((err) => {
-//       console.log(err);
-//       res.send();
-//     });
-// });
+//bryan
+app.use('/reviews', (req, res) => {
+  axios.get(`http://localhost:3001${req.originalUrl}`)
+    .then(res => res.data)
+    .then((data) => {
+      res.send(data);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.send();
+    });
+});
 
 // //eric
 // app.use('/overview', (req, res) => {
