@@ -1,16 +1,11 @@
 config:
   target: 'http://localhost:3000'
   phases:
-    - duration: 300
+    - duration: 30
       arrivalRate: 100
   processor: "./worker.js"
 scenarios:
- -name: "hit it one time"
-  flow:
-    - loop:
-      - get:
-          url: "/{{listing}}/"
-      over:
-        -235
-        -52
-      count: 2
+  - flow:
+    - get:
+      url: "/{{listing}}/"
+  - log: "sent a request to {{listing}}"
