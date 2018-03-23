@@ -6,7 +6,7 @@ const getRandom = (min, max) => {
 
 const generateUrl = (userContext, events, done) => {
   const randomNum = getRandom(1, 12);
-  const range = 0;
+  let range = 0;
   if(randomNum % 3 === 0) {
     range = 10000;
   } else if (randomNum % 3 === 1) {
@@ -16,4 +16,7 @@ const generateUrl = (userContext, events, done) => {
   }
   userContext.vars.listing = getRandom(1, range);
   return done();
+};
+module.exports = {
+  generateUrl
 };
