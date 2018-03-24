@@ -1,0 +1,132 @@
+MongoPool with Driver (80 workers, 10 loops, 60 sec){
+  All virtual users finished
+Summary report @ 09:27:24(-0700) 2018-03-24
+  Scenarios launched:  4800
+  Scenarios completed: 4788
+  Requests completed:  47899
+  RPS sent: 252.2
+  Request latency:
+    min: 4.8
+    max: 118916.5
+    median: 5885.1
+    p95: 15958.8
+    p99: 39738
+  Scenario counts:
+    something: 4800 (100%)
+  Codes:
+    200: 47899
+  Errors:
+    ESOCKETTIMEDOUT: 12
+}
+
+Mongoose pooling at 10 pools (80 workers, 10 loops, 60 sec) {
+  All virtual users finished
+Summary report @ 10:18:30(-0700) 2018-03-24
+  Scenarios launched:  4800
+  Scenarios completed: 4632
+  Requests completed:  46961
+  RPS sent: 244.75
+  Request latency:
+    min: 4.2
+    max: 104011.3
+    median: 5482.9
+    p95: 13219.4
+    p99: 61826.7
+  Scenario counts:
+    something: 4800 (100%)
+  Codes:
+    200: 46961
+  Errors:
+    ESOCKETTIMEDOUT: 168
+}
+Mongoose Pooling at 20 connections  (80 workers, 10 loops, 60 sec) {
+  All virtual users finished
+Summary report @ 10:31:56(-0700) 2018-03-24
+  Scenarios launched:  4800
+  Scenarios completed: 4800
+  Requests completed:  48000
+  RPS sent: 486.37
+  Request latency:
+    min: 9.6
+    max: 33482.8
+    median: 2700
+    p95: 9854.4
+    p99: 17578.2
+  Scenario counts:
+    something: 4800 (100%)
+  Codes:
+    200: 48000
+}
+
+Mongo Driver pool 20 connections (80, 10, 60) {
+  All virtual users finished
+Summary report @ 10:44:51(-0700) 2018-03-24
+  Scenarios launched:  4800
+  Scenarios completed: 4800
+  Requests completed:  48000
+  RPS sent: 368.3
+  Request latency:
+    min: 4
+    max: 67212.6
+    median: 3100.5
+    p95: 8983.7
+    p99: 19683.9
+  Scenario counts:
+    something: 4800 (100%)
+  Codes:
+    200: 48000
+}
+Mongo Driver pool 30 connections (80, 10, 60) {
+Summary report @ 10:58:57(-0700) 2018-03-24
+  Scenarios launched:  4800
+  Scenarios completed: 4800
+  Requests completed:  48000
+  RPS sent: 372.21
+  Request latency:
+    min: 3
+    max: 57482.9
+    median: 3450.3
+    p95: 9462
+    p99: 18418.2
+  Scenario counts:
+    something: 4800 (100%)
+  Codes:
+    200: 48000
+}
+Mongo Driver pool 15 connections (80, 10, 60) {
+ Summary report @ 11:02:42(-0700) 2018-03-24
+  Scenarios launched:  4800
+  Scenarios completed: 4800
+  Requests completed:  48000
+  RPS sent: 420.65
+  Request latency:
+    min: 6.5
+    max: 67015.2
+    median: 3022.6
+    p95: 9545.8
+    p99: 22057.8
+  Scenario counts:
+    something: 4800 (100%)
+  Codes:
+    200: 48000 
+}
+Mongoose pool 15 connections (80, 10, 60){
+ Summary report @ 11:06:57(-0700) 2018-03-24
+  Scenarios launched:  4800
+  Scenarios completed: 4800
+  Requests completed:  48000
+  RPS sent: 347.4
+  Request latency:
+    min: 3.8
+    max: 67740
+    median: 4809.5
+    p95: 11141.6
+    p99: 33761.2
+  Scenario counts:
+    something: 4800 (100%)
+  Codes: 
+}
+
+mongoose findOne 15 pool {
+  
+}

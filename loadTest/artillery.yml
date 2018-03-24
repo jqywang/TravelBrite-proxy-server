@@ -1,13 +1,16 @@
 config:
   target: 'http://localhost:3000'
   phases:
-    - duration: 30
-      arrivalRate: 800
+    - duration: 60
+      arrivalRate: 10
   processor: "./worker.js"
 
 scenarios:
   - name: "something"
     flow:
-      - function: "generateUrl"
-      - get:
-          url: "/{{listing}}"
+      - loop:
+        - function: "generateUrl"
+        - get:
+            url: "/reviews/{{listing}}"
+        # - log: "sent request to {{listing}}"
+        count: 100
