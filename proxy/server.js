@@ -15,7 +15,6 @@ app.use('/:listing_id', express.static(path.join(__dirname, 'public')));
 
 //bryan
 app.use('/reviews', (req, res) => {
-  console.log(req.originalUrl);
   axios.get(`http://localhost:3001${req.originalUrl}`)
     .then(res => res.data)
     .then((data) => {
