@@ -1,8 +1,8 @@
 config:
   target: 'http://localhost:3000'
   phases:
-    - duration: 10
-      arrivalRate: 100
+    - duration: 60
+      arrivalRate: 80
   processor: "./worker.js"
 
 scenarios:
