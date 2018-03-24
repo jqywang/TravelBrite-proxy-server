@@ -6,25 +6,51 @@ const path = require('path');
 const axios = require('axios');
 const app = express();
 const port = process.env.PORT || 3000;
+const clientBundles = './public/services';
+const serverBundles = './templates/services';
+const serviceConfig = require('./service-config.json');
+const services = require('../loader.js')(clientBundles, serverBundles, serviceConfig);
 
+const React = require('react');
+const ReactDom = require('react-dom/server');
+const Layout = require('./templates/layout');
+const App = require('./templates/app');
+const Scripts = require('./templates/scripts');
 
+const renderComponents = (components, props = {}) => {
+  return Object.keys(components).map(item => {
+    let component = React.createElement(components[item], props);
+    return ReactDom.renderToString(component);
+  });
+};
 // app.use(morgan('dev'));
 // app.use(cors());
 // app.use(express.static(path.join(__dirname, 'public')));
-app.use('/:listing_id', express.static(path.join(__dirname, 'public')));
+// app.use('/:listing_id', express.static(path.join(__dirname, 'public')));
 
 //bryan
-app.use('/reviews', (req, res) => {
-  axios.get(`http://localhost:3001${req.originalUrl}`)
-    .then(res => res.data)
-    .then((data) => {
-      res.send(data);
-    })
-    .catch((err) => {
-      console.log(err);
-      res.send();
-    });
+
+app.get('/:listing_id', function(req, res) {
+  let components = renderComponents(services, {itemid: req.params.id});
+  res.end(Layout(
+    'FoxSteedAdvisor',
+    App(...components),
+    Scripts(Object.keys(services))
+  ));
 });
+
+
+// app.use('/reviews', (req, res) => {
+//   axios.get(`http://localhost:3001${req.originalUrl}`)
+//     .then(res => res.data)
+//     .then((data) => {
+//       res.send(data);
+//     })
+//     .catch((err) => {
+//       console.log(err);
+//       res.send();
+//     });
+// });
 
 // //eric
 // app.use('/overview', (req, res) => {
