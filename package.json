@@ -7,15 +7,19 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node proxy/server.js"
   },
-  "author": "Zachary Inouye",
+  "author": "Jeffrey Wang",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
     "cors": "^2.8.4",
     "express": "^4.16.2",
+    "fetch": "^1.1.0",
     "morgan": "^1.9.0",
     "newrelic": "^3.2.0",
-    "path": "^0.12.7"
+    "node-fetch": "^2.1.2",
+    "path": "^0.12.7",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0"
   },
   "devDependencies": {
     "bluebird": "^3.5.1"

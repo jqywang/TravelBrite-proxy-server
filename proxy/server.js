@@ -6,8 +6,8 @@ const path = require('path');
 const axios = require('axios');
 const app = express();
 const port = process.env.PORT || 3000;
-const clientBundles = './public/services';
-const serverBundles = './templates/services';
+const clientBundles = '/home/jqywang/Documents/HackReactor/tripadvisor/jeff-proxy/proxy/public/services';
+const serverBundles = '/home/jqywang/Documents/HackReactor/tripadvisor/jeff-proxy/proxy/templates/services';
 const serviceConfig = require('./service-config.json');
 const services = require('../loader.js')(clientBundles, serverBundles, serviceConfig);
 
@@ -16,6 +16,7 @@ const ReactDom = require('react-dom/server');
 const Layout = require('./templates/layout');
 const App = require('./templates/app');
 const Scripts = require('./templates/scripts');
+
 
 const renderComponents = (components, props = {}) => {
   return Object.keys(components).map(item => {
