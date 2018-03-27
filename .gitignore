@@ -4,6 +4,6 @@ newrelic.js
 bundle.js
 app.js
 app-server.js
-/lib
 Reviews.js
 Reviews-server.js
+styles.css

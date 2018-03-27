@@ -10,12 +10,16 @@ const clientBundles = '/home/jqywang/Documents/HackReactor/tripadvisor/jeff-prox
 const serverBundles = '/home/jqywang/Documents/HackReactor/tripadvisor/jeff-proxy/proxy/templates/services';
 const serviceConfig = require('./service-config.json');
 const services = require('../loader.js')(clientBundles, serverBundles, serviceConfig);
+const loadStyles = require('../cssLoader.js');
 
 const React = require('react');
 const ReactDom = require('react-dom/server');
 const Layout = require('./templates/layout');
 const App = require('./templates/app');
 const Scripts = require('./templates/scripts');
+
+loadStyles(path.join(__dirname, 'public')); //loading CSS into public folder
+
 
 const renderComponents = (components, props = {}) => {
   return Object.keys(components).map(item => {
@@ -25,12 +29,17 @@ const renderComponents = (components, props = {}) => {
 };
 // app.use(morgan('dev'));
 // app.use(cors());
-// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+
+
+
 // app.use('/:listing_id', express.static(path.join(__dirname, 'public')));
 
 //bryan
-app.use('/lib', express.static(path.join(__dirname, 'public/lib')));
-app.use('/services', express.static(path.join(__dirname, 'public/services')));
+// app.use('/lib', express.static(path.join(__dirname, 'public/lib')));
+// app.use('/services', express.static(path.join(__dirname, 'public/services')));
 
 app.get('/:listing_id', function(req, res) {
   let components = renderComponents(services, {id: req.params.listing_id});
