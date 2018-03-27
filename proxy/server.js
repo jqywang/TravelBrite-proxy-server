@@ -17,7 +17,6 @@ const Layout = require('./templates/layout');
 const App = require('./templates/app');
 const Scripts = require('./templates/scripts');
 
-
 const renderComponents = (components, props = {}) => {
   return Object.keys(components).map(item => {
     let component = React.createElement(components[item], props);
@@ -30,9 +29,11 @@ const renderComponents = (components, props = {}) => {
 // app.use('/:listing_id', express.static(path.join(__dirname, 'public')));
 
 //bryan
+app.use('/lib', express.static(path.join(__dirname, 'public/lib')));
+app.use('/services', express.static(path.join(__dirname, 'public/services')));
 
 app.get('/:listing_id', function(req, res) {
-  let components = renderComponents(services, {itemid: req.params.id});
+  let components = renderComponents(services, {id: req.params.listing_id});
   res.end(Layout(
     'FoxSteedAdvisor',
     App(...components),

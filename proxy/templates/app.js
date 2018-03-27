@@ -1,7 +1,7 @@
 
-module.exports = (overview, nearby, reccomendations, reviews) => `
-  <div id="overview">${info}</div>
-  <div id="nearby">${countdown}</div>
-  <div id="reccomendations">${related}</div>
-  <div id="reviews">${reviews}</div>
-`;
+module.exports = (reviews, overview, nearby, reccomendations) => `
+  <div id="Reviews">${reviews}</div>
+ `;
+// <div id="overview">${overview}</div>
+//   <div id="nearby">${nearby}</div>
+//   <div id="reccomendations">${reccomendations}</div>

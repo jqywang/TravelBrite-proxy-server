@@ -6,8 +6,8 @@ const exists = Promise.promisify(fs.stat);
 const loadBundle = (cache, item, filename) => {
   setTimeout(() => {
     console.log(`loading: ${filename}`);
-    cache[item] = require(filename).default;    
-  }, 2000);
+    cache[item] = require(filename).default;   
+  }, 1000);
 };
 
 const fetchBundles = (path, services, suffix = '', require = false) => {
@@ -25,8 +25,6 @@ const fetchBundles = (path, services, suffix = '', require = false) => {
             .then(res => {
               const dest = fs.createWriteStream(filename);
               res.body.pipe(dest);
-              console.log(res.body._events.end);
-              console.log(filename);
               res.body.on('end', () => {
                 require ? loadBundle(services, item, filename) : null;
               });
@@ -39,8 +37,7 @@ const fetchBundles = (path, services, suffix = '', require = false) => {
 };
 
 module.exports = (clientPath, serverPath, services) => {
-  fetchBundles(clientPath, services, '/app');
-  fetchBundles(serverPath, services, '/app-server', true);
-  console.log(services);
+  fetchBundles(clientPath, services);
+  fetchBundles(serverPath, services, '-server', true);
   return services;
 };
