@@ -1,3 +1,9 @@
 node_modules
 newrelic.js
 *.log
+bundle.js
+app.js
+app-server.js
+Reviews.js
+Reviews-server.js
+styles.css
