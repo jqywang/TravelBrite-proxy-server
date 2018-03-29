@@ -127,6 +127,78 @@ Mongoose pool 15 connections (80, 10, 60){
   Codes: 
 }
 
-mongoose findOne 15 pool {
-  
-}
+REDIS first run:
+All virtual users finished
+Summary report @ 22:15:18(-0700) 2018-03-27
+  Scenarios launched:  225
+  Scenarios completed: 225
+  Requests completed:  112500
+  RPS sent: 1093.29
+  Request latency:
+    min: 0.6
+    max: 476.8
+    median: 108.4
+    p95: 234.8
+    p99: 284.8
+  Scenario counts:
+    something: 225 (100%)
+  Codes:
+    200: 112500
+
+
+
+REDIS second run: 
+All virtual users finished
+Summary report @ 22:21:55(-0700) 2018-03-27
+  Scenarios launched:  225
+  Scenarios completed: 225
+  Requests completed:  112500
+  RPS sent: 1026.93
+  Request latency:
+    min: 0.8
+    max: 471.6
+    median: 115.5
+    p95: 263.7
+    p99: 337.5
+  Scenario counts:
+    something: 225 (100%)
+  Codes:
+    200: 112500
+
+REDIS 3rd run: 
+All virtual users finished
+Summary report @ 22:27:29(-0700) 2018-03-27
+  Scenarios launched:  225
+  Scenarios completed: 225
+  Requests completed:  112500
+  RPS sent: 984.42
+  Request latency:
+    min: 0.4
+    max: 666.2
+    median: 117.6
+    p95: 268.7
+    p99: 371.4
+  Scenario counts:
+    something: 225 (100%)
+  Codes:
+    200: 112500
+
+NO redis:
+All virtual users finished
+Summary report @ 22:34:15(-0700) 2018-03-27
+  Scenarios launched:  225
+  Scenarios completed: 225
+  Requests completed:  112500
+  RPS sent: 885.83
+  Request latency:
+    min: 1.4
+    max: 649.9
+    median: 158.7
+    p95: 284.9
+    p99: 346.5
+  Scenario counts:
+    something: 225 (100%)
+  Codes:
+    200: 112500
+
+
