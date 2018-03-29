@@ -11,7 +11,7 @@ const loadStyles = (filepath) => {
   .catch((e) =>{
     if(e.code === 'ENOENT') {
       console.log('loading CSS');
-      axios.get('http://localhost:3001/bundledata/styles.css')
+      axios.get('http://localhost:3001/styles.css')
       .then(res=>res.data)
       .then(data => {
         fs.writeFile(`${filepath}/styles.css`, data, (e) => {
