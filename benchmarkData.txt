@@ -202,3 +202,21 @@ Summary report @ 22:34:15(-0700) 2018-03-27
     200: 112500
 
 
+server w/ ssr : 5 x 400 x 45
+All virtual users finished
+Summary report @ 15:12:47(-0700) 2018-03-29
+  Scenarios launched:  225
+  Scenarios completed: 225
+  Requests completed:  90000
+  RPS sent: 1658.99
+  Request latency:
+    min: 0.5
+    max: 492.4
+    median: 23
+    p95: 50
+    p99: 69.9
+  Scenario counts:
+    something: 225 (100%)
+  Codes:
+    200: 90000
+

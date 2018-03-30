@@ -13,4 +13,4 @@ scenarios:
         - get:
             url: "/reviews/{{listing}}"
         # - log: "sent request to {{listing}}"
-        count: 500
+        count: 400
