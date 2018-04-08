@@ -24,9 +24,9 @@ artillery run artillery.yml
 
 ## Authors
 
- **Jeffrey Wang
+ *Jeffrey Wang
  
- Bryan Duong for original front end code
+ -Bryan Duong for original front end code-
 
 
 ## License
