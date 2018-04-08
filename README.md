@@ -2,10 +2,6 @@
 
 Aggregate various microservices into one server and employ server side rendering for the purpose of search engine optimization
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Installing
 Have a node version greater than v7.6.0
 
