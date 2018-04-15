@@ -1,7 +1,15 @@
 # TravelBrite Proxy Server
 
-Aggregate various microservices into one server and employ server side rendering for the purpose of search engine optimization
-
+Aggregate various microservices into one server and employ server side rendering for the purpose of search engine optimization.
+TravelBrite Tech Stack:
+  * Express.js
+  * React.js
+  * MongoDB
+  * Webpack
+  * New Relic
+  * Redis
+  * Artillery.io
+  
 ### Installing
 Have a node version greater than v7.6.0
 
@@ -21,14 +29,7 @@ artillery run artillery.yml
 ## Authors
 
  **Jeffrey Wang**
- 
- _Bryan Duong for original front end code_
-
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Thank you to BoxLunch for the front end sector of this project
+This project is licensed under the MIT License
