@@ -1,6 +1,6 @@
 # TravelBrite Proxy Server
 
-Aggregate various microservices into one server and employ server side rendering for the purpose of search engine optimization.
+Aggregate various microservices into one server and employ server side rendering for the purpose of search engine optimization. Reviews microservice can be found here: github.com/jqywang/travelbrite-review-component
 TravelBrite Tech Stack:
   * Express.js
   * React.js
